@@ -1,0 +1,173 @@
+userjs.txt
+
+
+$(function() {
+  //alert("users!!");
+  $('#searchForm').hide();
+  $('#attendance_forms').hide();
+  $("button:first").button({
+    icons: {
+      primary: "ui-icon-locked"
+    }
+  }).next().button({
+    icons:{
+      primary: "ui-icon-locked"
+    }
+  }).next().button({
+    icons: {
+      primary: "ui-icon-gear",
+      secondary: "ui-icon-triangle-1-s"
+    }
+  }).next().button({
+    icons: {
+      primary: "ui-icon-gear",
+      secondary: "ui-icon-triangle-1-s"
+    }
+  });
+  //$('#employee').hide();
+  $("#details").click(function(){
+    
+      $.ajax({
+        type: "POST",
+        url: "view_employeedata.php",
+        data:{"mode_of_employment": $("input[name='mode_of_employment']").val(),
+              "classification_of_employee": $("input[name='classification_of_employee']").val(),
+              "classification_of_employee": $("input[name='picture']").val(),
+              "fullname": $("input[name='fullname']").val(),
+              "mobile": $("input[name='mobile']").val(),
+              "username": $("input[name='username']").val()
+        },
+        success: function(data) {
+          $("#employees").html(data);
+
+        },
+        error: function(data){
+        }
+
+      });
+
+      $('.employee').show();
+      
+  });
+  $('#btn_searchEmp').click(function(){
+     //alert('search');
+     $("#searchForm").show();
+     $("#search_btn").click(function(){
+      var searchObj={"search":$("input[name='search']").val()};
+    
+      $.ajax({
+        type: "POST",
+        url: "search_employee.php",
+        data: searchObj,
+        success: function(data){
+          //console.log(JSON.stringify(data));
+          $("#employee").append(data);
+        },
+        error: function(data){
+          alert(JSON.stringify(data));
+        }
+      });
+
+     });
+     
+  });
+  $('#ATTENDANCES').hide();
+  $('#ATTENDANCE').click(function(){
+    $('#ATTENDANCES').dialog({
+      show: "bounce",
+      hide: "blind",
+      resizable: false,
+      modal: true,
+      width: "auto",
+      buttons:{
+            "time in": function(){
+              $('#timeOutForm').hide();
+              
+              $('#timeInForm').dialog({
+                show: "bounce",
+                hide: "blind",
+                resizable: false,
+                modal: true,
+                width: "auto",
+                buttons:{
+                  "go":function(){
+                    var timeInObj = {
+                      "time_in":$("input[name='time_in']").val(),
+                      "date_time_in":$("input[name='date_time_in']").val()
+                    };
+                    $.ajax({
+
+                      type: "POST",
+                      url: "../CMS/add_attendance.php",
+                      data: timeInObj,
+                      success: function(data){
+                        $( this ).dialog( "close" );
+                        },
+
+                      error: function(data){
+                        $( this ).dialog( "close" );
+                      }
+                    });
+                    $( this ).dialog( "close" );
+                  },
+                  "close": function(){
+                    $( this ).dialog( "close" );
+                  }
+                },
+                
+
+              });
+
+               
+              $( this ).dialog( "close" );  
+             },
+
+            "time out":function(){
+              $('#timeInForm').hide();
+              $('#timeOutForm').dialog({
+                show: "bounce",
+                hide: "blind",
+                resizable: false,
+                modal: true,
+                width: "auto",
+                buttons:{
+                  "go":function(){
+                    var timelimit = setTimeout(function() {}, 10); ;
+                    var timeOutObj = {
+                      "time_out":$("input[name='time_out']").val()                    
+                    };
+                    $.ajax({
+
+                      type: "POST",
+                      url: "../CMS/time_out.php",
+                      data: timeOutObj,
+                      success: function(data){
+                        $( this ).dialog( "close" );
+                      },
+                      error: function(data){
+                        $( this ).dialog( "close" );
+                      }
+                    });
+                    $( this ).dialog( "close" );
+                  },
+                  "close": function(){
+                    $( this ).dialog( "close" );
+                  }
+                },
+                
+              });
+              $( this ).dialog( "close" );
+
+             },
+            "close":function(){
+              $( this ).dialog( "close" );
+            },
+
+    },
+
+  });
+
+});
+
+
+});

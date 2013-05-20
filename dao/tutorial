@@ -1,0 +1,15 @@
+TUTORIAL .. .. .. .. ... .. .. .. .. .. .. ..
+
+
+
+
+
+$.ajax({
+	type:"POST",
+	url:"addStudent.php",
+	data:{"name":"john","age":12}
+
+
+
+
+});
