@@ -9,6 +9,6 @@ $username = $_SESSION['username'];
 //$time_out = $_POST['time_out'];
 
 $action = new functionDAO();
-$action->time_out($username);
+$action->over_time($username,/*remarks*/);
 
 ?>

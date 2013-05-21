@@ -123,54 +123,6 @@
                 $this->closeConn();
 
             }
-            
-
-            /*-------------------PAYOUT MONITORING-----------------*/
-
-            function releaseSalary($salary, $overtime_pay, $date_released, $remarks){
-
-                $this->openConn();
-
-                $stmt = $this->dbh->prepare("INSERT INTO CMS. payout (salary, overtime_pay, date_released, remarks) VALUES (? , ? , NOW(), ?)");
-                $stmt->bindParam(1, $salary);
-                $stmt->bindParam(2, $overtime_pay);
-                $stmt->bindParam(3, $date_released);
-                $stmt->bindParam(4, $remarks);  
-                $stmt->execute();
-                $id = $this->dbh->lastInsertId();
-
-                $this->closeConn();
-            }
-            function viewPayout(){
-                $this->openConn();
-
-                $stmt = $this->dbh->prepare("SELECT salary,overtime_pay,date_released,remarks FROM payout WHERE payout_id=?");
-
-                $this->closeConn();
-            }
-            function addPayoutHistory($salary, $overtime_pay, $date_released, $remarks){
-
-                $this->openConn();
-
-                $stmt = $this->dbh->prepare("INSERT INTO CMS. payout (salary, overtime_pay, date_released, remarks) VALUES(?, ?, NOW(), ?)");
-                $stmt->bindParam(1, $salary);
-                $stmt->bindParam(2, $overtime_pay);
-                $stmt->bindParam(3, $date_released);
-                $stmt->bindParam(4, $remarks);   
-                $stmt->execute();
-                $id = $this->dbh->lastInsertId();
-
-                $this->closeConn();
-            }
-            function viewPayoutHistory(){
-
-                $this->openConn();
-    
-                //$stmt = $this->dbh->prepare("SELECT FROM ");
-
-                $this->closeConn();
-            }
-
 
             /*------------Attendance MONITORING-----------------*/
 
@@ -198,7 +150,7 @@
             function time_in($username,$time_in,$date_checked){
                 $this->openConn();
 
-                $stmt = $this->dbh->prepare("INSERT INTO `CMS`.`attendance` (`time_in`, `date_checked`) VALUES ( CURTIME(),  CURDATE());");
+                $stmt = $this->dbh->prepare("INSERT INTO `CMS`.`attendance` (`time_in`, `date_checked`) VALUES ( CURTIME(),  CURDATE())");
                 $stmt->execute();
                 $id = $this->dbh->lastInsertId();
 
@@ -218,18 +170,42 @@
             }
             function time_out($username){
                 $this->openConn();
-                //$stmt = $this->dbh->prepare("SELECT att. id from attendance as att , employee_constraint as ec, employees as emp where ec. employee_id = emp. id order by att. id desc limit 1")
-                $stmt = $this->dbh->prepare("SELECT att. id FROM attendance AS att, employee_constraint AS ec,employees AS emp WHERE att. id = ec. attendance_id  AND emp. username = ?");
-                $stmt = bindParam(1, $username);
+                
+                $stmt=$this->dbh->prepare("SELECT MAX(att. id) as latestAttendedID  FROM attendance AS att,employee_constraint AS ec,employees AS emp WHERE att. id=ec. attendance_id AND emp. username = ?");
+                $stmt->bindParam(1, $username);
                 $stmt->execute();
+                $att_id=$stmt->fetch();
 
-
-                    $stmt = $this->dbh->prepare("UPDATE `CMS`.attendance SET time_out = CURTIME() WHERE attendance. id = ?");
-                    $stmt->execute();
-                    $id = $this->dbh->lastInsertId();
-                    $this->closeConn();
+                $stmt2 = $this->dbh->prepare("UPDATE attendance SET time_out = CURTIME() WHERE attendance. id = ?");
+                $stmt2->bindParam(1,$att_id[0]);
+                $stmt2->execute();
+                
+                    
+                $this->closeConn();
             }
-            function viewTime_in (){
+
+            function over_time(/*remarks*/$username){
+                $this->openConn();
+
+                $stmt=$this->dbh->prepare("SELECT MAX(att. id) as latestAttendedID  FROM attendance AS att,employee_constraint AS ec,employees AS emp WHERE att. id=ec. attendance_id AND emp. username = ?");
+                $stmt->bindParam(1, $username);
+                $stmt->execute();
+                $ot_id=$stmt->fetch();
+
+                $stmt2 = $this->dbh->prepare("UPDATE attendance SET over_time_worked = time_out - time_in  WHERE attendance. id = ?");
+                $stmt2->bindParam(1,$ot_id[0]);
+                $stmt2->execute();
+
+              /*$stmt3 = $this->dbh->prepare("UPDATE attendance SET remarks = ?  WHERE attendance. id = ?");
+                $stmt3->bindParam(1,$ot_id[0]);
+                $stmt3->bindParam(2,$remarks);
+                $stmt3->execute();
+                */
+
+                $this->closeConn();
+
+            }
+            function viewTime_in(){
 
                 $this->openConn();
                 $stmt = $this->dbh->prepare("SELECT * FROM attendance");
@@ -242,7 +218,7 @@
             function Viewing_overtimeworked(){
                 $this->openConn();
 
-                $stmt = $this->dbh->prepare("SELECT (time_out - time_in) as over_time_worked from attendance;");
+                $stmt = $this->dbh->prepare("SELECT (time_out - time_in) as over_time_worked from attendance ");
 
                 $this->closeConn();
                 //SELECT (time_out - time_in) as over_time_worked from attendance

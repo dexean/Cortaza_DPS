@@ -1,7 +1,8 @@
 $(function() {
   //alert("users!!");
   $('#searchForm').hide();
-  $('#attendance_forms').hide();
+  //$('#attendance_forms').hide();
+  $('#remark_form').show();
   $("button:first").button({
     icons: {
       primary: "ui-icon-locked"
@@ -27,7 +28,7 @@ $(function() {
           type: "POST",
           url: "view_attendance.php",
           success: function(data) {
-          $("#tbl_attendance").append(data);
+          $("#tbl_tbody_attendance").empty().append(data);
           },
           error: function(data){
             alert("error in adding attendance.....");
@@ -45,8 +46,8 @@ $(function() {
         url: "search_employee.php",
         data: searchObj,
         success: function(data){
-            console.log(JSON.stringify(data));
-          $("#employee").append(data);
+            //console.log(JSON.stringify(data));
+          $("#employee").empty().append(data);
          
 
         },
@@ -122,7 +123,6 @@ $(function() {
                 width: "auto",
                 buttons:{
                   "go":function(){
-                    var timelimit = setTimeout(function() {}, 10); ;
                     var timeOutObj = {
                       "time_out":$("input[name='time_out']").val()                    
                     };

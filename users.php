@@ -122,7 +122,7 @@ if (!isset($_SESSION['username'])){
     	<div id="body-inner-user">
     		<div id="searchForm">
 				<form class="form-search" class="navbar-search pull-right">
-					<input type="text" id="search" placeholder="search .. .." name="search">
+				<input type="text" id="search" placeholder="search .. .." name="search">
 					<button id="search_btn" class="btn-primary">Search</button>
 				</form>
 			</div>
@@ -151,11 +151,11 @@ if (!isset($_SESSION['username'])){
 							<th>Date</th>
 							<th>Remarks</th>
 						</tr>	
-					<tbody id="employee"></tbody>
+						<tbody id="tbl_tbody_attendance"></tbody>
 	    			</table>
 	    		</div>
 	    	</div>
-	    	<div  class="employee table" id="empDetails">
+	    	<div  class="employee table-hover" id="empDetails">
 					<table id="employee" border="3">
 						<thead>
 							<tr>
@@ -184,6 +184,7 @@ if (!isset($_SESSION['username'])){
 						<p>Remarks : <select name="remarks"><option>Approve</option><option>Abort</option></select></p>-->
 					</form>
 				</div>
+				
 	    	</div>
 
 	    	</br>
