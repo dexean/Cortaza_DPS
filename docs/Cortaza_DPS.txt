@@ -1,0 +1,17 @@
+﻿		Cortaza Payroll System with Insurances thru Attendances
+
+Description :  We know that most of the companies were not using a tally-type monitoring of attendance and even the payout of it's Employees that's why i've created this system for more convenient and more faster releasing of salary with overtimepay , monitoring the attendance also the overtime working of specific Employee computation of the over-all salary to be received by an Employee .
+
+Features :
+	Finished:
+Register and Logging in of Employee and the Accountant
+Time in/Time Out
+
+
+Ongoing:
+Over time works
+	Future: 
+Payout processing .. . ..	
+
+
+
