@@ -4,21 +4,24 @@ if (!isset($_SESSION['username'])){
 	header('Location:../app/home.php');
 } else {
 	$username = $_SESSION['username'];
+	
 }
 ?>
 <html>
 <title>User Profile</title>
 <head>
 	<meta charset="utf-8">
-	<!--****************************************************LINKs***************************************************-->
+	<!--****************************************************LINKs******************************************************-->
 	<link rel="stylesheet" href="css/jquery-ui.css" />
 	<link rel="stylesheet" href="css/index.css" type="text/css"/>
 	<link rel="stylesheet" type="text/css" href="css/bootstrap.css"/>
-	<link rel="shortcut icon" href="../app/images/img01.jpg">
+	<link rel="stylesheet" type="text/css" href="css/bootstrap-datetimepicker.min.css"/>
+	<link rel="shortcut icon" href="../app/images/img01.jpg" />
+	
 
 
 
-	<!--***************S******C*******R*******I*******P******T*******S**********-->
+	<!--***************S******C*******R*******I*******P******T*******S**************-->
 	<script src="js/jquery-1.8.2.min.js"></script>
 	<script src="js/jquery-2.0.0.min.js"></script>
 	<script src="js/jquery-2.0.0-beta3.js"></script>
@@ -28,7 +31,7 @@ if (!isset($_SESSION['username'])){
 	<script src="js/jquery-ui.js"></script>
 	<script type="text/javascript" src="js/jQuery-custom-input-file.js"></script>
     <script src="js/bootstrap.js"></script>
-    <!--script src="js/userpage.js"></script-->
+	<script src="js/bootstrap-datetimepicker.min.js"></script>
     <script src="js/user.js"></script>
 	<!--<script src="js/homepage.js"></script>-->
 	<script type="text/javascript">
@@ -124,52 +127,22 @@ if (!isset($_SESSION['username'])){
     		<div id="searchForm">
 				<form class="form-search" class="navbar-search pull-right">
 				<input type="text" id="search" placeholder="search .. .." name="search">
-					<button id="search_btn" class="btn-primary">Search</button>
+				<button id="search_btn" class="btn-primary btn-mini">Search</button>
 				</form>
 			</div>
-    		<div class="btn-group">
-    		<button id="btn-time_in" class="btn btn-primary" data-toggle="button">Attendance Ko</button>
-			<button id="btn_searchEmp" class="btn btn-primary" data-toggle="button" >Search Employee</button>
-			<button id="btn_editEmp" class="btn btn-primary" data-toggle="button">Edit Employee</button>
-			</div>
-	    	</br>
+			</br>
+			<div id="fieldset"><p class="lead"><?php if (isset($username)) echo $username; /*echo $mode_of_employment; echo $classification_of_employee; echo $mobile;*/ ?></p></div>
+			</br>
 	    	<div class="imageContainer">
                 <img alt=""  src="./images/images/icons/default.png" width="150" height="150" id="profileImage"><br />
                 <a href="#" id="uploadFile" title="Upload"><img alt=""  src="./images/images/icons/profile.png"></a>
                 <a href="#" id="delete" title="Delete" style="display:none;position:relative;z-index:999999;"><img alt=""  src="./images/images/icons/redWrong.png"></a>
                 <div id="messageBox"></div>
 	    	</div>
-	    	<div id="profile">
-	    	</div>
-
-	    	<div id="ATTENDANCES">
-	    		<div id="tables_attendance">
-	    			<table id="tbl_attendance"  class="table table-hover" class="tbl_attendance" border="3">
-						<tr>
-							<th>Time In</th>
-							<th>Time Out</th>
-							<th>Over time Worked</th>
-							<th>Date</th>
-							<th>Remarks</th>
-						</tr>	
-						<tbody id="tbl_tbody_attendance"></tbody>
-	    			</table>
-	    		</div>
-	    	</div>
-	    	<div  class="employee table-hover" id="empDetails">
-					<table id="employee" border="3">
-						<thead>
-							<tr>
-								<th>Mode of Employment</th>
-								<th>Classification of Employee</th>
-								<th>Picture</th>
-								<th>Fullname</th>
-								<th>Mobile</th>
-								<th>Username</th>
-							</tr>
-						</thead>
-						<tbody id="employees"></tbody>
-					</table>
+		    	<div class="btn-group">
+		    		<button id="btn-time_in" class="btn btn-primary btn-mini" data-toggle="button">My Attendance</button>
+					<button id="btn_searchEmp" class="btn btn-primary btn-mini" data-toggle="button" >Search Employee</button>
+					<button id="btn_addEmpHistory" class="btn btn-primary btn-mini" data-toggle="button" >Add Employment History</button>
 				</div>
 	    	<div id="attendance_forms">
 		    	<div id="timeInForm">
@@ -181,20 +154,108 @@ if (!isset($_SESSION['username'])){
 				<div id="timeOutForm">
 		    		<form id="attendance_form"  action="users.php" method="POST" title="Time-out Form">
 						<p><label for = 'time_out'>Time Out:</label><input type= 'text' id='time_out' name = "time_out" value="<?php date_default_timezone_set('Asia/Manila'); echo date('h:i:s', time()); ?>"readonly /></p>
-						<!--<p><label for = 'date_time_out'>Date Checked:</label><input type= 'text' name = "date_time_out" value="<?php //echo date("m-d-y"); ?>" readonly/></p>
-						<p>Remarks : <select name="remarks"><option>Approve</option><option>Abort</option></select></p>-->
+						<p>Remarks : <select name="remarks"><option value="attendance approved">Approve</option><option value="attendance aborted">Abort</option></select></p>
 					</form>
 				</div>
-				<div id="overtime_remarkForm">
-		    		<form id="OT_remark_form"  action="users.php" method="POST" title="Time-out Form">
-						<p><label for = 'over_time_worked'>Time Out:</label><input type= 'text' id='over_time_worked' name = "over_time_worked" value="<?php date_default_timezone_set('Asia/Manila'); echo date('h:i:s', time()); ?>"readonly /></p>
-						<p>Remarks : <select name="remarks"><option>Approve</option><option>Abort</option></select></p>
+				<div id="employmentHistoryForm">
+					<form id="empHistoryForm" action="users.php" method="POST" title="Employment History Form">
+							  <div id="datetimepicker2" class="input-append">
+							    <label for='date_of_employment'>Date of Employment :</label><input data-format="MM/dd/yyyy HH:mm:ss PP" type="text"></input>
+							    <span class="add-on">
+							      <i data-time-icon="icon-time" data-date-icon="icon-calendar">
+							      </i>
+							    </span>
+							  </div>
+						<script type="text/javascript">
+							 $(function() {
+							   $('#datetimepicker2').datetimepicker({
+							      language: 'en',
+							      pick12HourFormat: true
+							    });
+							  });
+						</script>
+						<p><label for = 'company_name'>Department Name :</label><input type= 'text' name = 'company_name' /></p>
+						<p><label for = 'company_address'>Department Address :</label><input type= 'text' name = 'company_address' /></p>
+						<p><label for = 'company_phone'>Department Phone Number :</label><input type= 'text' name = 'company_phone'/></p>
+						<p><label for = 'company_email'>Department Email :</label><input type= 'text' name = 'company_email'/></p>
+						<p><label for = 'position'>Position :</label><input type= 'text' name = 'position'/></p>
+						<p><label for = 'salary'>Salary :</label><input type= 'double' name = 'salary'/></p>
 					</form>
 				</div>
 	    	</div>
+	    	<div id="profSSS">
+	    	</div>
+	    	<div id="tablesHere">
+		    	<div id="ATTENDANCES">
+		    		<div id="tables_attendance">
+		    			<table id="tbl_attendance"  class="table table-hover" class="tbl_attendance" border="3">
+							<tr>
+								<th>Time In</th>
+								<th>Time Out</th>
+								<th>Over time Worked</th>
+								<th>Date</th>
+								<th>Remarks</th>
+							</tr>	
+							<tbody id="tbl_tbody_attendance"></tbody>
+		    			</table>
+		    		</div>
+		    	</div>
+		    	<div  class="employee table-hover" id="empDetails">
+						<table id="employee" border="3">
+							<thead>
+								<tr>
+									<th>Mode of Employment</th>
+									<th>Classification of Employee</th>
+									<th>Picture</th>
+									<th>Fullname</th>
+									<th>Mobile</th>
+									<th>Username</th>
+								</tr>
+							</thead>
+							<tbody id="employees"></tbody>
+						</table>
+				</div>
+				<div id="EmpInsurances" class="employee table-hover" id="empDeductions">
+						<table id="employee" border="3">
+							<thead>
+								<tr>
+									<th>Salary Deductions</th>
+									<th>Beneficiary</th>
+									<th>Loaned Money</th>
+									<!--<th></th>-->
+									<th>Total Cash deducted</th>
+									<th>Total Salary</th>
+								</tr>
+							</thead>
+							<tbody id="insurances"></tbody>
+						</table>
+				</div>
+				<div  id="empHistory" class="employee table-hover" id="empDeductions">
+						<table id="employment_history" border="3">
+							<thead>
+								<tr>
+									<th>Date of Employment</th>
+									<th>Department Name</th>
+									<th>Department Address</th>
+									<th>Department Phone</th>
+									<th>Department Email</th>
+									<th>Position</th>
+									<th>Salary</th>
+								</tr>
+							</thead>
+							<tbody id="empHistoryTbl"></tbody>
+						</table>
+				</div>
+			</div>
+	    	
+			<button id="profile_btn" class="btn btn-primary" ><i class="icon-user"></i>Profile</button>
+			<div id="profiles" title="My Profiles">
+			<img src="./images/images/icons/default.png" id="<?php if (isset($username)) echo $username; ?>" width="150" height="150"/>
+				<div id="myprofiles">
 
-	    	</br>
-	    	</br>
+				</div><!--myprofiles-->
+			</div><!--profiles-->
+
 		</div> 
 
 

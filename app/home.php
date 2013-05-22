@@ -127,12 +127,11 @@
 								<p><label for = 'username'>Username:</label><input type= 'text' id='username' name = "username"/></p>
 								<p><label for = 'password'>Password:</label><input type= 'password' id='password' name = "password"/></p>
 								<input type="hidden" name="id" />
-
 							</form>
 					</div>
 					<div class="modal-footer">
 						<button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
-						<button class="btn btn-primary" type="submit"  >Register</button>
+						<button class="btn btn-primary" type="submit">Register</button>
 					</div>
 				</div>
     		</div>	

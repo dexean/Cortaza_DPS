@@ -36,14 +36,14 @@ $("#here-register").click(function(){
 								url: "../app/addUser.php",
 								data: employeeObj,
 								success: function(data){
-									alert("erererere");
-									$( this ).dialog( "close" );
+									//alert("erererere");
 									},
 
 								error: function(data){
-									$( this ).dialog( "close" );
+									$(this).dialog("close");
 								}
-							});		
+							});	
+						$(this).dialog("close");	
 									
 					},
 					Cancel:function(){

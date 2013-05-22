@@ -2,7 +2,8 @@ $(function() {
   //alert("users!!");
   $('#searchForm').hide();
   $('#attendance_forms').hide();
-  $('#remark_form').show();
+  $('#tablesHere').hide();
+  $('#profiles').hide();
       $.ajax({
           type: "POST",
           url: "view_attendance.php",
@@ -13,6 +14,17 @@ $(function() {
             alert(JSON.stringify(data))
           }
         });
+
+      $.ajax({
+        type:"POST",
+        url:"profile.php",
+        succes:function(data){
+          $("#profile").append(data);
+        },
+        error:function(data){
+
+        }
+      });
 
   $('#btn_searchEmp').click(function(){
      $("#searchForm").show();
@@ -46,7 +58,7 @@ $(function() {
       show: "blind",
       hide: "blind",
       resizable: false,
-      modal: true,
+      modal: false,
       width: "auto",
       buttons:{
             "time in": function(){
@@ -70,10 +82,11 @@ $(function() {
                       data: timeInObj,
                       success: function(data){
                         $(this).dialog("close");
+                        alert(JSON.stringify(data));
                         },
 
                       error: function(data){
-                        alert(JSON.stringify(data))
+                        alert(JSON.stringify(data));
                         $(this).dialog("close");
                       }
                     });
@@ -102,19 +115,22 @@ $(function() {
                 buttons:{
                   "go":function(){
                     var timeOutObj = {
-                      "time_out":$("input[name='time_out']").val()                    
+                      "time_out":$("input[name='time_out']").val(),
+                      "remarks":$("select[name='remarks']").val()                   
                     };
+                   
                     $.ajax({
 
                       type: "POST",
                       url: "time_out.php",
                       data: timeOutObj,
                       success: function(data){
+                        // alert(JSON.stringify(data));
                         $(this).dialog("close");
                       },
                       error: function(data){
                         alert(JSON.stringify(data))
-                        $( this ).dialog("close");
+                        $(this).dialog("close");
                       }
                     });
                     $(this).dialog("close");
@@ -132,11 +148,111 @@ $(function() {
               $(this).dialog("close");
             },
 
-    },
+      },
+
+    });
 
   });
 
-});
+  $('#profile_btn').click(function(){
+    $('#profiles').show();
+    /*$("#profiles").dialog({
+          modal:false,
+            show:"blind",
+            hide:"blind",
+            heigth:500,
+            width:1000,
+            dragable:true,
+            resizable:false,
+            modal: true,
+            buttons:{
+              "Cancel":function(){
+              $(this).dialog("close");
+              $(document.location.reload(true));
+            }
+          }
+
+        });*/
+        $.ajax({
+          type:"POST",
+          url:"profile.php",
+          success:function(data){
+            $("#myprofiles").append(data);
+            
+          },
+          error:function(data){
+
+          }
+        })
+      $('#profile_btn').click(function(){
+        $(document.location.reload(true));
+      });
+  });
+
+  $('#btn_addEmpHistory').click(function(){
+    
+      $('#empHistory').dialog({
+      show: "blind",
+      hide: "blind",
+      width: "auto",
+      buttons:{
+            "Add History": function(){
+              $('#timeOutForm').hide();
+              $('#employmentHistoryForm').dialog({
+                show: "bounce",
+                hide: "blind",
+                resizable: false,
+                modal: true,
+                width: "auto",
+                buttons:{
+                  "go":function(){
+                    var empHistoryObj = {
+                      "date_of_employment":$("input[name='time_in']").val(),
+                      "company_name":$("input[name='time_in']").val(),
+                      "company_address":$("input[name='time_in']").val(),
+                      "company_phone":$("input[name='time_in']").val(),
+                      "company_email":$("input[name='time_in']").val(),
+                      "position":$("input[name='time_in']").val(),
+                      "salary":$("input[name='date_checked']").val()
+                    };
+                    $.ajax({
+
+                      type: "POST",
+                      url: "addEmploymentHistory.php",
+                      data: empHistoryObj,
+                      success: function(data){
+                        alert(JSON.stringify(data));
+                        $(this).dialog("close");
+                        },
+
+                      error: function(data){
+                        alert(JSON.stringify(data));
+                        $(this).dialog("close");
+                      }
+                    });
+                    $(this).dialog("close");
+                  },
+                  "close": function(){
+                    $(this).dialog("close");
+                  }
+                },
+                
+
+              });
+
+               
+              $(this).dialog("close");  
+             },
+
+            "close":function(){
+              $(this).dialog("close");
+            },
+
+        },
+
+      });
+
+  });
 
 
 });

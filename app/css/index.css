@@ -289,15 +289,9 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#2dbded', end
     float:left;
     overflow:hidden;
 }
-
 .pagination li.current a {
     background-position:0 -12px;
 }
-
-/*
-    Caption
-*/
-
 .caption {
     z-index:500;
     position:absolute;
@@ -317,9 +311,9 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#2dbded', end
 #body-inner-user{
 
     background-color: #fff;
-    width: 990px;
+    width: 973px;
     margin-left: 204px;
-    height: auto;
+    height: 1000px;
 
 
 

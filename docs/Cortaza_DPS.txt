@@ -9,7 +9,7 @@ Time in/Time Out
 
 
 Ongoing:
-Over time works
+Adding Salary Deductions
 	Future: 
 Payout processing .. . ..	
 
