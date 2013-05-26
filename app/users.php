@@ -131,7 +131,7 @@ if (!isset($_SESSION['username'])){
 				</form>
 			</div>
 			</br>
-			<div id="fieldset"><p class="lead"><?php if (isset($username)) echo $username; /*echo $mode_of_employment; echo $classification_of_employee; echo $mobile;*/ ?></p></div>
+			<div id="fieldset"><p class="lead"><?php if (isset($username)) echo $username; ?></p></div>
 			</br>
 	    	<div class="imageContainer">
                 <img alt=""  src="./images/images/icons/default.png" width="150" height="150" id="profileImage"><br />
@@ -142,9 +142,10 @@ if (!isset($_SESSION['username'])){
 		    	<div class="btn-group">
 		    		<button id="btn-time_in" class="btn btn-primary btn-mini" data-toggle="button">My Attendance</button>
 					<button id="btn_searchEmp" class="btn btn-primary btn-mini" data-toggle="button" >Search Employee</button>
-					<button id="btn_addEmpHistory" class="btn btn-primary btn-mini" data-toggle="button" >Add Employment History</button>
+					<button id="btn_addEmpHistory" class="btn btn-primary btn-mini" data-toggle="button" >Employment History</button>
+					<button id="btn_payout" class="btn btn-primary btn-mini" data-toggle="button" >Payout</button>
 				</div>
-	    	<div id="attendance_forms">
+	    	<div id="forms_here">
 		    	<div id="timeInForm">
 		    		<form id="attendance_form"  action="users.php" method="POST" title="Attendance Form">
 						<p><label for = 'time_in'>Time In:</label><input type= 'text' id='time_in' name = "time_in" value="<?php date_default_timezone_set('Asia/Manila'); echo date('h:i:s', time()); ?>"readonly /></p>
@@ -160,7 +161,7 @@ if (!isset($_SESSION['username'])){
 				<div id="employmentHistoryForm">
 					<form id="empHistoryForm" action="users.php" method="POST" title="Employment History Form">
 							  <div id="datetimepicker2" class="input-append">
-							    <label for='date_of_employment'>Date of Employment :</label><input data-format="MM/dd/yyyy HH:mm:ss PP" type="text"></input>
+							    <label for='date_of_employment'>Date of Employment :</label><input data-format="yyyy-MM-dd" type="text" name="date_of_employment"></input>
 							    <span class="add-on">
 							      <i data-time-icon="icon-time" data-date-icon="icon-calendar">
 							      </i>
@@ -170,7 +171,8 @@ if (!isset($_SESSION['username'])){
 							 $(function() {
 							   $('#datetimepicker2').datetimepicker({
 							      language: 'en',
-							      pick12HourFormat: true
+							      pick12HourFormat: true,
+
 							    });
 							  });
 						</script>
@@ -179,7 +181,7 @@ if (!isset($_SESSION['username'])){
 						<p><label for = 'company_phone'>Department Phone Number :</label><input type= 'text' name = 'company_phone'/></p>
 						<p><label for = 'company_email'>Department Email :</label><input type= 'text' name = 'company_email'/></p>
 						<p><label for = 'position'>Position :</label><input type= 'text' name = 'position'/></p>
-						<p><label for = 'salary'>Salary :</label><input type= 'double' name = 'salary'/></p>
+						<p><label for = 'salary'>Salary :</label><input type= 'int' name = 'salary'/></p>
 					</form>
 				</div>
 	    	</div>
@@ -253,9 +255,8 @@ if (!isset($_SESSION['username'])){
 			<img src="./images/images/icons/default.png" id="<?php if (isset($username)) echo $username; ?>" width="150" height="150"/>
 				<div id="myprofiles">
 
-				</div><!--myprofiles-->
-			</div><!--profiles-->
-
+				</div>
+			</div>
 		</div> 
 
 

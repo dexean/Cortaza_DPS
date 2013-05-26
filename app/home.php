@@ -93,23 +93,18 @@
 						<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
 						<h3 id="myModalLabel">Log in</h3>
 					</div>
-					<div class="modal-body">
-						<!--<div id="login">-->
-				    		<form id="login_here" action="login.php" class="pull-left" name="login" method="POST">
-				    			<blockquote class="pull-left">
-									<fieldset>
-									<legend>Login</legend>
-									<p><label for="username">Username : </label><input type="text" id="username" name="username" /></p>
-									<p><label for="password">Password : </label><input type="password" id="password" name="password" /></p>
-									</fieldset>
-								</blockquote>	
-								<input type="submit" value="Login"/>
-							</form>
-						<!--</div>-->
-					</div>
 					<div class="modal-footer">
-						<button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
-						<button class="btn btn-primary" type="submit" value="Login">Log in</button>
+						<div class="modal-body">
+				    		<form id="login_here" action="login.php" class="pull-left" name="login" method="POST">
+									<fieldset>
+									<p><p id="username-label" ><label for="username"></p>Username : </label><input type="text" id="username" name="username" /></p>
+									<p><p id="password-label" ><label for="password"></p>password : </label><input type="password" id="password" name="password" /></p>
+									</fieldset>
+									<input class="btn btn-primary" type="submit" value="Login"/>
+									<button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
+							</form>
+						</div>
+						
 					</div>
 				</div>
 				<!--             Register     MODAL        -->

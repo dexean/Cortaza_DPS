@@ -1,7 +1,7 @@
 $(function() {
   //alert("users!!");
   $('#searchForm').hide();
-  $('#attendance_forms').hide();
+  $('#forms_here').hide();
   $('#tablesHere').hide();
   $('#profiles').hide();
       $.ajax({
@@ -25,6 +25,18 @@ $(function() {
 
         }
       });
+
+      /*$.ajax({
+        type:"POST",
+        url:"viewEmploymentHistory.php",
+        succes:function(data){
+          $("#profile").append(data);
+        },
+        error:function(data){
+
+        }
+      });*/
+
 
   $('#btn_searchEmp').click(function(){
      $("#searchForm").show();
@@ -207,13 +219,13 @@ $(function() {
                 buttons:{
                   "go":function(){
                     var empHistoryObj = {
-                      "date_of_employment":$("input[name='time_in']").val(),
-                      "company_name":$("input[name='time_in']").val(),
-                      "company_address":$("input[name='time_in']").val(),
-                      "company_phone":$("input[name='time_in']").val(),
-                      "company_email":$("input[name='time_in']").val(),
-                      "position":$("input[name='time_in']").val(),
-                      "salary":$("input[name='date_checked']").val()
+                      "date_of_employment":$("input[name='date_of_employment']").val(),
+                      "company_name":$("input[name='company_name']").val(),
+                      "company_address":$("input[name='company_address']").val(),
+                      "company_phone":$("input[name='company_phone']").val(),
+                      "company_email":$("input[name='company_email']").val(),
+                      "position":$("input[name='position']").val(),
+                      "salary":$("input[name='salary']").val()
                     };
                     $.ajax({
 

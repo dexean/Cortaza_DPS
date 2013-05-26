@@ -15,6 +15,6 @@ $position = $_POST['position'];
 $salary = $_POST['salary'];
 
 $action = new functionDAO();
-$action->add_employment_history($date_of_employment,$company_name,$company_address,$company_phone,$company_email,$position,$salary);
+$action->add_employment_history($username, $date_of_employment, $company_name, $company_address, $company_phone, $company_email, $position, $salary);
 
 ?>

@@ -27,6 +27,26 @@
                 $this->closeConn();
             }   
 
+            function profile($username){
+                $this->openConn();
+
+                $stmt=$this->dbh->prepare("SELECT mode_of_employment,classification_of_employee,fullname,mobile FROM employees WHERE username=?");
+                $stmt->bindParam(1,$username);
+                $stmt->execute();
+
+                while($row=$stmt->fetch()){
+                    echo "<div id=".$row[0].">";
+                    echo "Mode Of Employment:" .$row[0]."<br />";
+                    echo "Classification Of Employee:" .$row[1]."<br />";
+                    echo "Fullname:" .$row[2]."<br />";
+                    echo "Mobile number:" .$row[3]."<br />";
+                    echo "</div>";
+                }
+
+                $this->closeConn();
+ 
+            }
+
 
 
 
@@ -35,12 +55,11 @@
 
 
 
-            function viewEmployeeData($username){ 
+            function viewEmployeeData(){ 
 
                 $this->openConn();
 
-                $stmt = $this->dbh->prepare("SELECT mode_of_employment,classification_of_employee,picture,fullname,mobile,username FROM employees as emp,employee_constraint as ec WHERE emp. id = ec. employee_id AND emp. username  = ?");
-                $stmt->bindParam(1,$username);
+                $stmt = $this->dbh->prepare("SELECT mode_of_employment,classification_of_employee,picture,fullname,mobile,username FROM employees ");
                 $stmt->execute();
                 
                 $this->closeConn();
@@ -52,6 +71,8 @@
                   echo "<td>".$row[3]."</td>";
                   echo "<td>".$row[4]."</td>";
                   echo "<td>".$row[5]."</td>";
+                  echo "<td><button class='btn btn-primary btn-mini' onclick='myfunction'(".$row[0].")>Release Salary</button></td>";
+                  echo "<td><button class='btn btn-primary btn-mini' onclick='myfunction'(".$row[0].")>Confrirm</button></td>";
                   echo "</tr>"; 
                 }
 
@@ -228,18 +249,7 @@
                     
                 $this->closeConn();
             }
-            /*function over_time($username){
-                $this->openConn();
-                $stmt=$this->dbh->prepare("SELECT MAX(att. id) as latestAttendedID  FROM attendance AS att,employee_constraint AS ec,employees AS emp WHERE att. id=ec. attendance_id AND emp. username = ?");
-                $stmt->bindParam(1, $username);
-                $stmt->execute();
-                $ot_id=$stmt->fetch();
-                $stmt2 = $this->dbh->prepare("UPDATE attendance SET over_time_worked = time_out - time_in  WHERE attendance. id = ?");
-                $stmt2->bindParam(1,$ot_id[0]);
-                $stmt2->execute();
-                $this->closeConn();
 
-            }*/
             
             function Viewing_overtimeworked(){
                 $this->openConn();
@@ -247,7 +257,6 @@
                 $stmt = $this->dbh->prepare("SELECT (time_out - time_in) as over_time_worked from attendance ");
 
                 $this->closeConn();
-                //SELECT (time_out - time_in) as over_time_worked from attendance
             }
             function viewing_Attendance_For_a_Spec_Date($date1,$date2){
                 $this->openConn();
@@ -257,11 +266,11 @@
                 $this->closeConn();
             }
 
-            function add_employment_history($username,$date_of_employment,$company_name,$company_address,$company_phone,$company_email,$position,$salary){
+            function add_employment_history($username, $date_of_employment, $company_name, $company_address, $company_phone, $company_email, $position, $salary){
                 
                 $this->openConn();
 
-                $stmt = $this->dbh->prepare("INSERT INTO employment_history (date_of_employment,company_name,company_address,company_phone,company_email,position,salary) VALUES (?, ?, ?, ?, ?, ?, ?)");
+                $stmt = $this->dbh->prepare("INSERT INTO employment_history(date_of_employment,company_name,company_address,company_phone,company_email,position,salary) VALUES (?, ?, ?, ?, ?, ?, ?)");
                 $stmt->bindParam(1,$date_of_employment);
                 $stmt->bindParam(2,$company_name);
                 $stmt->bindParam(3,$company_address);
@@ -272,45 +281,83 @@
                 $stmt->execute();
                 $id = $this->dbh->lastInsertId();
 
-                $stmt2 = $this->dbh->prepare("SELECT id FROM employees WHERE username = ?");
+                $stmt2 = $this->dbh->prepare("SELECT employees. id FROM employees WHERE username = ?");
                 $stmt2->bindParam(1, $username);
                 $stmt2->execute();
                 $emp_id = $stmt2->fetch();
 
-                echo $emp_id;
+                /*echo $emp_id;*/
 
-                $stmt3 = $this->dbh->prepare("SELECT att. id from attendance as att,employee_constraint as ec,employees as emp WHERE att. id = ec. attendance_id AND emp. id = ec. employee_id AND emp. username = ?");
+
+                /*$stmt3 = $this->dbh->prepare("SELECT att. id from attendance as att,employee_constraint as ec,employees as emp WHERE att. id = ec. attendance_id AND emp. id = ec. employee_id AND emp. username = ?");
                 $stmt3->bindParam(1, $username);
                 $stmt3->execute();
                 $att_id = $stmt3->fetch();
 
-                $stmt4 = $this->dbh->prepare("INSERT INTO employee_constraint(employee_id,attendance_id,employment_id) values(?,?,?)");
+                echo $att_id;*/
+
+                $stmt4 = $this->dbh->prepare("INSERT INTO employee_constraint(employee_id,employment_id) values(?,?)");
                 $stmt4->bindParam(1, $emp_id[0]);
-                $stmt4->bindParam(2, $att_id[0]);
-                $stmt4->bindParam(3,$id);
+                $stmt4->bindParam(2,$id);
 
                 $this->closeConn();
 
             }
-            function profile($username){
+
+            function viewEmploymentHistory($username){
+
                 $this->openConn();
 
-                $stmt=$this->dbh->prepare("SELECT mode_of_employment,classification_of_employee,fullname,mobile FROM employees WHERE username=?");
-                $stmt->bindParam(1,$username);
-                $stmt->execute();
+                $stmt = $this->dbh->prepare("SELECT * from employment_history");
 
-                while($row=$stmt->fetch()){
-                    echo "<div id=".$row[0].">";
-                    echo "Mode Of Employment:" .$row[0]."<br />";
-                    echo "Classification Of Employee:" .$row[1]."<br />";
-                    echo "Fullname:" .$row[2]."<br />";
-                    echo "Mobile number:" .$row[3]."<br />";
-                    echo "</div>";
-                }
 
                 $this->closeConn();
- 
+
             }
+
+
+            function viewingOvertimeWorked(){
+                $this->openConn();
+
+                $stmt = $this->dbh->prepare("SELECT emp. fullname,att. over_time_worked,att. remarks FROM employees as emp,attendance as att,employee_constraint as ec WHERE emp. id = ec. employee_id AND att. id = ec. attendance_id");
+                $stmt->execute();
+
+                $this->closeConn();
+
+                while ($row = $stmt->fetch()) {
+                    echo"<tr id=".$row[0].">";
+                    echo"<td>".$row[0]."</td>";
+                    echo"<td>".$row[1]."</td>";
+                    echo"<td>$250.00</td>";
+                    echo"<td>".$row[2]."</td>";
+                    echo"</tr>";
+                }
+
+            }
+            function viewAttendance(){
+                $this->openConn();
+
+                $stmt = $this->dbh->prepare("SELECT emp. id,emp. fullname,att. time_in,att. time_out,att. date_checked,att. remarks FROM employees as emp,attendance as att,employee_constraint as ec WHERE emp. id = ec. employee_id AND att. id = ec. attendance_id");
+                $stmt->execute();
+
+                $this->closeConn();
+                while($row = $stmt->fetch()){
+                    echo "<tr id=".$row[0].">";
+                    echo "<td>".$row[0]."</td>";
+                    echo "<td>".$row[1]."</td>";
+                    echo "<td>".$row[2]."</td>";
+                    echo "<td>".$row[3]."</td>";
+                    echo "<td>".$row[4]."</td>";
+                    echo "<td>".$row[5]."</td>";
+                    echo "</tr>";
+
+                }
+            }
+
+
+
+
+
             
   }    
     

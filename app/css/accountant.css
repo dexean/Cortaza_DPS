@@ -1,16 +1,6 @@
-#loginForm{
-	display: none;
+#table_to_append{
+	margin:100px 100px auto 100px;
 }
-#payout{
-	text-align: right;
+.form-search{
+	margin: 100px 100px auto 635px;
 }
-#menu_buttons{
-	border: 10px solid #33ff66;
-}
-#btn_view_payout_history{
-	width: 30px;
-}
-#body-inner{
-	background-color: #000;
-}
-

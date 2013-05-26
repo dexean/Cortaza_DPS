@@ -188,14 +188,12 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#2dbded', end
 }
 #body-inner{
     background-color: #F8F8F8;
-    width: 973px;
-    margin-left: 204px;
+    margin: auto 245px auto 205px;
+    height: auto;
 
 }
 #body-inner01{
     background-color: #F8F8F8;
-    /*background-image: url(../images/.jpg);
-    background-repeat: no-repeat;*/
     height: 1000px;
     width: 98px;
 
@@ -237,14 +235,6 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#2dbded', end
     position:relative;
     display:none;
 }
-
-/*
-    Each slide
-    Important:
-    Set the width of your slides
-    If height not specified height will be set by the slide content
-    Set to display block
-*/
 
 .slides_container div.slide {
     display:block;
@@ -313,7 +303,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#2dbded', end
     background-color: #fff;
     width: 973px;
     margin-left: 204px;
-    height: 1000px;
+    height: auto;
 
 
 
@@ -328,4 +318,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#2dbded', end
 }
 #searchForm{
     margin: 0px 0px 0px 750px;
+}
+#bodyContent{
+    margin: auto auto auto 120px;
 }
