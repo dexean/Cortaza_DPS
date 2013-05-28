@@ -126,19 +126,24 @@ if (!isset($_SESSION['username'])){
     	<div id="body-inner-user">
     		<div id="searchForm">
 				<form class="form-search" class="navbar-search pull-right">
-				<input type="text" id="search" placeholder="search .. .." name="search">
-				<button id="search_btn" class="btn-primary btn-mini">Search</button>
+					<input type="text" id="search" placeholder="search .. .." name="search">
+					<button id="search_btn" class="btn-primary btn-mini">Search</button>
 				</form>
 			</div>
 			</br>
 			<div id="fieldset"><p class="lead"><?php if (isset($username)) echo $username; ?></p></div>
 			</br>
-	    	<div class="imageContainer">
+	    	<!--<div class="imageContainer">
                 <img alt=""  src="./images/images/icons/default.png" width="150" height="150" id="profileImage"><br />
                 <a href="#" id="uploadFile" title="Upload"><img alt=""  src="./images/images/icons/profile.png"></a>
                 <a href="#" id="delete" title="Delete" style="display:none;position:relative;z-index:999999;"><img alt=""  src="./images/images/icons/redWrong.png"></a>
                 <div id="messageBox"></div>
-	    	</div>
+	    	</div>-->
+	    		<p class="pull-left">
+	    		<button id="profile_btn" class="btn btn-primary" ><i class="icon-user"></i>Profile</button>
+				<div id="profiles" title="My Profiles">
+					<img src="./images/images/icons/default.png" id="<?php if (isset($username)) echo $username; ?>" width="150" height="150"/>
+				</div></php>
 		    	<div class="btn-group">
 		    		<button id="btn-time_in" class="btn btn-primary btn-mini" data-toggle="button">My Attendance</button>
 					<button id="btn_searchEmp" class="btn btn-primary btn-mini" data-toggle="button" >Search Employee</button>
@@ -161,7 +166,7 @@ if (!isset($_SESSION['username'])){
 				<div id="employmentHistoryForm">
 					<form id="empHistoryForm" action="users.php" method="POST" title="Employment History Form">
 							  <div id="datetimepicker2" class="input-append">
-							    <label for='date_of_employment'>Date of Employment :</label><input data-format="yyyy-MM-dd" type="text" name="date_of_employment"></input>
+							    <label for='date_of_employment'>Date of Employment :</label><input data-format="yyyy-MM-dd" type="text" name="date_of_employment" />
 							    <span class="add-on">
 							      <i data-time-icon="icon-time" data-date-icon="icon-calendar">
 							      </i>
@@ -171,7 +176,7 @@ if (!isset($_SESSION['username'])){
 							 $(function() {
 							   $('#datetimepicker2').datetimepicker({
 							      language: 'en',
-							      pick12HourFormat: true,
+							      pick12HourFormat: true
 
 							    });
 							  });
@@ -184,9 +189,7 @@ if (!isset($_SESSION['username'])){
 						<p><label for = 'salary'>Salary :</label><input type= 'int' name = 'salary'/></p>
 					</form>
 				</div>
-	    	</div>
-	    	<div id="profSSS">
-	    	</div>
+			</div>
 	    	<div id="tablesHere">
 		    	<div id="ATTENDANCES">
 		    		<div id="tables_attendance">
@@ -232,7 +235,7 @@ if (!isset($_SESSION['username'])){
 							<tbody id="insurances"></tbody>
 						</table>
 				</div>
-				<div  id="empHistory" class="employee table-hover" id="empDeductions">
+				<div  id="empHistory" class="table table-hover table-bordered">
 						<table id="employment_history" border="3">
 							<thead>
 								<tr>
@@ -245,20 +248,25 @@ if (!isset($_SESSION['username'])){
 									<th>Salary</th>
 								</tr>
 							</thead>
-							<tbody id="empHistoryTbl"></tbody>
+							<tbody id="emp_history"></tbody>
 						</table>
 				</div>
-			</div>
-	    	
-			<button id="profile_btn" class="btn btn-primary" ><i class="icon-user"></i>Profile</button>
-			<div id="profiles" title="My Profiles">
-			<img src="./images/images/icons/default.png" id="<?php if (isset($username)) echo $username; ?>" width="150" height="150"/>
-				<div id="myprofiles">
-
-				</div>
-			</div>
+                <div  id="empPayout" class="table table-hover table-bordered">
+                    <table id="employe_payout" border="3">
+                        <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Salary</th>
+                            <th>Overtime Pay</th>
+                            <th>Date Released</th>
+                            <th>Remarks</th>
+                        </tr>
+                        </thead>
+                        <tbody id="payout"></tbody>
+                    </table>
+                </div>
+			</div>				
 		</div> 
-
 
 	</div>
 

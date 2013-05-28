@@ -29,42 +29,6 @@
 	<script src="js/bootstrap-transition.js"></script>
 	<script src="js/homepage.js"></script>
 	<script src="js/index.js"></script>
-	<script type="text/javascript">
-		//try to create an object to send our request with
-		$(function(){
-				$('#slides').slides({
-					preload: true,
-					preloadImage: 'images/Walking-FAIL.gif',
-					play: 5000,
-					pause: 2500,
-					hoverPause: true,
-					animationStart: function(current){
-						$('.caption').animate({
-							bottom:-35
-						},100);
-						if (window.console && console.log) {
-							// example return of current slide number
-							console.log('animationStart on slide: ', current);
-						};
-					},
-					animationComplete: function(current){
-						$('.caption').animate({
-							bottom:0
-						},200);
-						if (window.console && console.log) {
-							// example return of current slide number
-							console.log('animationComplete on slide: ', current);
-						};
-					},
-					slidesLoaded: function() {
-						$('.caption').animate({
-							bottom:0
-						},200);
-					}
-				});
-			});
-	</script>
-
 </head>
 
 <body>
@@ -196,8 +160,6 @@
 									</div>
 						</div>
 								</div>
-								<a href="#" class="prev"><img src="images/arrow-prev.png" width="24" height="43" alt="Arrow Prev"></a>
-								<a href="#" class="next"><img src="images/arrow-next.png" width="24" height="43" alt="Arrow Next"></a>
 
 	    	</div>
 	    	<div id='wrapper02'>

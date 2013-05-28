@@ -104,6 +104,22 @@ $(document).ready(function() {
 		$('.employee').hide();
 	});
 
+	$('#search').keyup(function(){
+		var searchObj = {"search":$(this).val()};
+		$.ajax({
+			type: "POST",
+			url: "search_employee.php",
+			data: searchObj,
+			success: function(data){
+				console.log(data);
+				$(document.getElementById("employees")).html(data);
+			},
+			error: function(data){
+				alert(data);
+			}
+		});
+	});
+
 
 
 });

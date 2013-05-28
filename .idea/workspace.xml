@@ -1,0 +1,514 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="9c32a673-fd36-4e8c-90f5-8272ceadf52c" name="Default" comment="">
+      <change type="DELETED" beforePath="$PROJECT_DIR$/accountant.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/accountantFooter.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/addUser.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/add_attendance.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/uploaded-images/bg4.jpeg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/uploaded-images/bg6.jpeg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/uploaded-images/bg8.jpeg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/accountant.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/accountant1.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/bootstrap.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/bootstrap.min.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/index.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/jquery-ui-1.10.1.custom.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/jquery-ui-1.10.1.custom.min.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/jquery-ui.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/user_profile.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dao/basedao.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dao/functionDAO.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dao/tutorial" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/db/Cortaza_DPS.sql" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/docs/.~lock.Cortaza_DPS.txt#" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/footer.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/footer2.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/functiondao.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/home.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/images/Walking-FAIL.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/images/ambut.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/images/arrow-next.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/images/arrow-prev.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/images/b4.jpeg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/images/bg5.jpeg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/images/building.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/images/com.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/images/com1.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/images/com2.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/images/companyName.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/images/glyphicons-halflings-white.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/images/glyphicons-halflings.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/images/image.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/images/images/backgrounds,headers&amp;footers/b2.jpeg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/images/images/backgrounds,headers&amp;footers/background.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/images/images/backgrounds,headers&amp;footers/bg.jpeg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/images/images/backgrounds,headers&amp;footers/bg4.jpeg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/images/images/backgrounds,headers&amp;footers/bg5.jpeg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/images/images/backgrounds,headers&amp;footers/bg6.jpeg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/images/images/backgrounds,headers&amp;footers/bg7.jpeg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/images/images/backgrounds,headers&amp;footers/bg8.jpeg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/images/images/backgrounds,headers&amp;footers/bg9.jpeg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/images/images/backgrounds,headers&amp;footers/black_header.jpeg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/images/images/backgrounds,headers&amp;footers/footer.jpeg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/images/images/backgrounds,headers&amp;footers/footer1.jpeg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/images/images/backgrounds,headers&amp;footers/footer2.jpeg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/images/images/backgrounds,headers&amp;footers/footer3.jpeg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/images/images/backgrounds,headers&amp;footers/header01.jpeg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/images/images/backgrounds,headers&amp;footers/header02.jpeg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/images/images/backgrounds,headers&amp;footers/header03.jpeg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/images/images/backgrounds,headers&amp;footers/header04.jpeg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/images/images/backgrounds,headers&amp;footers/header05.jpeg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/images/images/backgrounds,headers&amp;footers/header06.jpeg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/images/images/backgrounds,headers&amp;footers/header1.jpeg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/images/images/backgrounds,headers&amp;footers/header10.jpeg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/images/images/backgrounds,headers&amp;footers/header2.jpeg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/images/images/backgrounds,headers&amp;footers/header3.jpeg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/images/images/backgrounds,headers&amp;footers/header4.jpeg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/images/images/backgrounds,headers&amp;footers/header5.jpeg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/images/images/backgrounds,headers&amp;footers/header6.jpeg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/images/images/backgrounds,headers&amp;footers/header7.jpeg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/images/images/backgrounds,headers&amp;footers/header8.jpeg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/images/images/backgrounds,headers&amp;footers/header9.jpeg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/images/images/backgrounds,headers&amp;footers/logo.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/images/images/featpics/4.jpeg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/images/images/featpics/5.jpeg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/images/images/featpics/6.jpeg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/images/images/featpics/7.jpeg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/images/images/featpics/8.jpeg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/images/images/featpics/9.jpeg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/images/images/featpics/images (1).jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/images/images/icons/3.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/images/images/icons/add-icon.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/images/images/icons/arrow-next.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/images/images/icons/arrow-prev.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/images/images/icons/check.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/images/images/icons/customers.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/images/images/icons/cws-tools-hover.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/images/images/icons/cws-tools.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/images/images/icons/default.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/images/images/icons/documents.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/images/images/icons/drop.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/images/images/icons/edit.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/images/images/icons/edit_gray.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/images/images/icons/example-frame.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/images/images/icons/gears_animated.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/images/images/icons/greenCheck.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/images/images/icons/home.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/images/images/icons/less.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/images/images/icons/loading.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/images/images/icons/login.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/images/images/icons/logout.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/images/images/icons/monitoring_icon.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/images/images/icons/more.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/images/images/icons/new-ribbon.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/images/images/icons/out.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/images/images/icons/pagination.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/images/images/icons/pen.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/images/images/icons/phpThumb_generated_thumbnailpng.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/images/images/icons/process.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/images/images/icons/processing.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/images/images/icons/profile.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/images/images/icons/redWrong.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/images/images/icons/search.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/images/images/icons/time_in.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/images/images/icons/time_out.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/images/images/icons/waiting.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/images/images/icons/ytools.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/images/images/rooms/room1.jpeg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/images/images/rooms/room2.jpeg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/images/images/rooms/room3.jpeg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/images/images/rooms/room4.jpeg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/images/images/rooms/room5.jpeg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/images/images/rooms/room6.jpeg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/images/images/rooms/rooms.jpeg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/images/img01.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/images/img02.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/images/logout.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/images/pagination.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/images/picture-1013992.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/images/search.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/images/settings.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/images/title.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/img/glyphicons-halflings-white.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/img/glyphicons-halflings.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/index.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/js/accountant.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/js/bootstrap.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/js/bootstrap.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/js/homepage.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/js/index.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/js/jQuery-custom-input-file.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/js/jquery-1.8.2.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/js/jquery-2.0.0-beta3.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/js/jquery-2.0.0.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/js/jquery-2.0.0b2.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/js/jquery-ui-1.10.3.custom.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/js/jquery-ui-1.10.3.custom.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/js/jquery-ui-1.9.0.custom.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/js/jquery-ui-1.9.0.custom.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/js/jquery-ui.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/js/jquery.upload.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/js/tables_from_accountant.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/js/user.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/js/userpage.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/login.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/logout.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/over_time.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/payoutpage.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/search_employee.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/time_out.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/upload.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/uploaded-images/bg4.jpeg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/uploaded-images/bg6.jpeg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/uploaded-images/bg8.jpeg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/userjs.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/userphp.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/users.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/view_attendance.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/view_employeedata.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/view_time_in.php" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/css/accountant.css" afterPath="$PROJECT_DIR$/app/css/accountant.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/js/accountant.js" afterPath="$PROJECT_DIR$/app/js/accountant.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/accountant.php" afterPath="$PROJECT_DIR$/app/accountant.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/addUser.php" afterPath="$PROJECT_DIR$/app/addUser.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/dao/functionDAO.php" afterPath="$PROJECT_DIR$/app/dao/functionDAO.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/home.php" afterPath="$PROJECT_DIR$/app/home.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/js/homepage.js" afterPath="$PROJECT_DIR$/app/js/homepage.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/css/index.css" afterPath="$PROJECT_DIR$/app/css/index.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/index.php" afterPath="$PROJECT_DIR$/app/index.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/profile.php" afterPath="$PROJECT_DIR$/app/profile.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/search_employee.php" afterPath="$PROJECT_DIR$/app/search_employee.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/js/tables_from_accountant.js" afterPath="$PROJECT_DIR$/app/js/tables_from_accountant.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/js/user.js" afterPath="$PROJECT_DIR$/app/js/user.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/users.php" afterPath="$PROJECT_DIR$/app/users.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/viewEmpHistory.php" afterPath="$PROJECT_DIR$/app/viewEmpHistory.php" />
+    </list>
+    <ignored path="Cortaza_PayrollSystem.iws" />
+    <ignored path=".idea/workspace.xml" />
+    <file path="/Dummy.txt" changelist="9c32a673-fd36-4e8c-90f5-8272ceadf52c" time="1369731152856" ignored="false" />
+    <file path="/users.php" changelist="9c32a673-fd36-4e8c-90f5-8272ceadf52c" time="1369711441475" ignored="false" />
+    <file path="/functionDAO.php" changelist="9c32a673-fd36-4e8c-90f5-8272ceadf52c" time="1369711103765" ignored="false" />
+    <file path="/user.js" changelist="9c32a673-fd36-4e8c-90f5-8272ceadf52c" time="1369711483210" ignored="false" />
+    <file path="/viewPayoutByEmployee.php" changelist="9c32a673-fd36-4e8c-90f5-8272ceadf52c" time="1369711070223" ignored="false" />
+    <option name="TRACKING_ENABLED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ChangesViewManager" flattened_view="true" show_ignored="false" />
+  <component name="CreatePatchCommitExecutor">
+    <option name="PATCH_PATH" value="" />
+  </component>
+  <component name="DaemonCodeAnalyzer">
+    <disable_hints />
+  </component>
+  <component name="DatabaseView">
+    <flatten value="false" />
+    <groupTables value="false" />
+    <sortChildren value="false" />
+  </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
+  <component name="FavoritesManager">
+    <favorites_list name="Cortaza_PayrollSystem" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf>
+      <file leaf-file-name="index.php" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/index.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="113" column="26" selection-start="2970" selection-end="2970" vertical-scroll-proportion="0.13615733">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FindManager">
+    <FindUsagesManager>
+      <setting name="OPEN_NEW_TAB" value="false" />
+    </FindUsagesManager>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitLogSettings">
+    <option name="myDateState">
+      <MyDateState />
+    </option>
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="changedFiles">
+      <list>
+        <option value="$PROJECT_DIR$/app/js/viewPayoutByEmployee.php" />
+        <option value="$PROJECT_DIR$/app/viewPayoutByEmployee.php" />
+        <option value="$PROJECT_DIR$/app/dao/functionDAO.php" />
+        <option value="$PROJECT_DIR$/app/js/user.js" />
+        <option value="$PROJECT_DIR$/app/users.php" />
+        <option value="$PROJECT_DIR$/app/index.php" />
+      </list>
+    </option>
+  </component>
+  <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
+  <component name="ProjectFrameBounds">
+    <option name="x" value="-1" />
+    <option name="y" value="25" />
+    <option name="width" value="1442" />
+    <option name="height" value="855" />
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="false">
+    <OptionsSetting value="true" id="Add" />
+    <OptionsSetting value="true" id="Remove" />
+    <OptionsSetting value="true" id="Checkout" />
+    <OptionsSetting value="true" id="Update" />
+    <OptionsSetting value="true" id="Status" />
+    <OptionsSetting value="true" id="Edit" />
+    <ConfirmationsSetting value="0" id="Add" />
+    <ConfirmationsSetting value="0" id="Remove" />
+  </component>
+  <component name="ProjectReloadState">
+    <option name="STATE" value="0" />
+  </component>
+  <component name="ProjectView">
+    <navigator currentView="ProjectPane" proportions="" version="1" splitterProportion="0.5">
+      <flattenPackages />
+      <showMembers />
+      <showModules />
+      <showLibraryContents ProjectPane="true" />
+      <hideEmptyPackages />
+      <abbreviatePackageNames />
+      <autoscrollToSource />
+      <autoscrollFromSource />
+      <sortByType />
+    </navigator>
+    <panes>
+      <pane id="ProjectPane">
+        <subPane>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Cortaza_PayrollSystem" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Cortaza_PayrollSystem" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Cortaza_PayrollSystem" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Cortaza_PayrollSystem" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Cortaza_PayrollSystem" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Cortaza_PayrollSystem" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Cortaza_PayrollSystem" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="js" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Cortaza_PayrollSystem" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Cortaza_PayrollSystem" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="dao" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
+      <pane id="Scope" />
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="WebServerToolWindowFactoryState" value="false" />
+  </component>
+  <component name="RunManager">
+    <configuration default="true" type="PhpLocalRunConfigurationType" factoryName="PHP Console">
+      <method />
+    </configuration>
+    <list size="0" />
+  </component>
+  <component name="ShelveChangesManager" show_recycled="false" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="9c32a673-fd36-4e8c-90f5-8272ceadf52c" name="Default" comment="" />
+      <created>1369700100578</created>
+      <updated>1369700100578</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-1" y="25" width="1442" height="855" extended-state="6" />
+    <editor active="false" />
+    <layout>
+      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.0" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.11262554" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+    </layout>
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="OFFER_MOVE_TO_ANOTHER_CHANGELIST_ON_PARTIAL_COMMIT" value="true" />
+    <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="true" />
+    <option name="CHECK_NEW_TODO" value="true" />
+    <option name="myTodoPanelSettings">
+      <value>
+        <are-packages-shown value="false" />
+        <are-modules-shown value="false" />
+        <flatten-packages value="false" />
+        <is-autoscroll-to-source value="false" />
+      </value>
+    </option>
+    <option name="PERFORM_UPDATE_IN_BACKGROUND" value="true" />
+    <option name="PERFORM_COMMIT_IN_BACKGROUND" value="true" />
+    <option name="PERFORM_EDIT_IN_BACKGROUND" value="true" />
+    <option name="PERFORM_CHECKOUT_IN_BACKGROUND" value="true" />
+    <option name="PERFORM_ADD_REMOVE_IN_BACKGROUND" value="true" />
+    <option name="PERFORM_ROLLBACK_IN_BACKGROUND" value="false" />
+    <option name="CHECK_LOCALLY_CHANGED_CONFLICTS_IN_BACKGROUND" value="false" />
+    <option name="CHANGED_ON_SERVER_INTERVAL" value="60" />
+    <option name="SHOW_ONLY_CHANGED_IN_SELECTION_DIFF" value="true" />
+    <option name="CHECK_COMMIT_MESSAGE_SPELLING" value="true" />
+    <option name="DEFAULT_PATCH_EXTENSION" value="patch" />
+    <option name="SHORT_DIFF_HORISONTALLY" value="true" />
+    <option name="SHORT_DIFF_EXTRA_LINES" value="2" />
+    <option name="SOFT_WRAPS_IN_SHORT_DIFF" value="true" />
+    <option name="INCLUDE_TEXT_INTO_PATCH" value="false" />
+    <option name="INCLUDE_TEXT_INTO_SHELF" value="false" />
+    <option name="SHOW_FILE_HISTORY_DETAILS" value="true" />
+    <option name="SHOW_VCS_ERROR_NOTIFICATIONS" value="true" />
+    <option name="SHOW_DIRTY_RECURSIVELY" value="false" />
+    <option name="LIMIT_HISTORY" value="true" />
+    <option name="MAXIMUM_HISTORY_ROWS" value="1000" />
+    <option name="UPDATE_FILTER_SCOPE_NAME" />
+    <option name="USE_COMMIT_MESSAGE_MARGIN" value="false" />
+    <option name="COMMIT_MESSAGE_MARGIN_SIZE" value="72" />
+    <option name="WRAP_WHEN_TYPING_REACHES_RIGHT_MARGIN" value="false" />
+    <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
+    <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="false" />
+    <option name="LAST_COMMIT_MESSAGE" />
+    <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="false" />
+    <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="false" />
+    <option name="CHECK_FILES_UP_TO_DATE_BEFORE_COMMIT" value="false" />
+    <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="false" />
+    <option name="REFORMAT_BEFORE_FILE_COMMIT" value="false" />
+    <option name="FILE_HISTORY_DIALOG_COMMENTS_SPLITTER_PROPORTION" value="0.8" />
+    <option name="FILE_HISTORY_DIALOG_SPLITTER_PROPORTION" value="0.5" />
+    <option name="ACTIVE_VCS_NAME" />
+    <option name="UPDATE_GROUP_BY_PACKAGES" value="false" />
+    <option name="UPDATE_GROUP_BY_CHANGELIST" value="false" />
+    <option name="UPDATE_FILTER_BY_SCOPE" value="false" />
+    <option name="SHOW_FILE_HISTORY_AS_TREE" value="false" />
+    <option name="FILE_HISTORY_SPLITTER_PROPORTION" value="0.6" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/app/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="103" column="33" selection-start="2601" selection-end="2601" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/js/accountant.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.270073" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/js/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/dao/functionDAO.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="367" column="33" selection-start="14753" selection-end="14753" vertical-scroll-proportion="0.91049385" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/viewPayoutByEmployee.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="8" column="36" selection-start="164" selection-end="164" vertical-scroll-proportion="0.18154311" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/users.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="253" column="16" selection-start="10496" selection-end="10496" vertical-scroll-proportion="0.49074075" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/js/user.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="292" column="34" selection-start="8102" selection-end="8102" vertical-scroll-proportion="1.7883211" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/js/tables_from_accountant.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="113" column="26" selection-start="2970" selection-end="2970" vertical-scroll-proportion="0.13615733">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>
+

@@ -24,11 +24,9 @@ $("#here-register").click(function(){
 								"picture":$("input[name='picture']").val(),
 								"fullname":$("input[name='fullname']").val(),
 								"mobile":$("input[name='mobile']").val(),
-								"username":$("input[name='username']").val(),
-								"password":$("input[name='password']").val()
+								"reg_username":$("input[name='reg_username']").val(),
+								"reg_password":$("input[name='reg_password']").val()
 							};
-
-
 
 							$.ajax({
 
@@ -36,7 +34,8 @@ $("#here-register").click(function(){
 								url: "../app/addUser.php",
 								data: employeeObj,
 								success: function(data){
-									//alert("erererere");
+									//alert(JSON.stringify(data));
+									//alert(employeeObj);
 									},
 
 								error: function(data){

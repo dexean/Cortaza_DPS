@@ -181,10 +181,10 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#2dbded', end
 }
 
 #login{
-    margin-left: 720px;
+    margin-left: 900px;
 }
 #register{
-    margin-left: 815px;
+    margin-left: 1000px;
 }
 #body-inner{
     background-color: #F8F8F8;
@@ -301,7 +301,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#2dbded', end
 #body-inner-user{
 
     background-color: #fff;
-    width: 973px;
+    width: 1159px;
     margin-left: 204px;
     height: auto;
 

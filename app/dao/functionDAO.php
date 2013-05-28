@@ -71,43 +71,40 @@
                   echo "<td>".$row[3]."</td>";
                   echo "<td>".$row[4]."</td>";
                   echo "<td>".$row[5]."</td>";
-                  echo "<td><button class='btn btn-primary btn-mini' onclick='myfunction'(".$row[0].")>Release Salary</button></td>";
-                  echo "<td><button class='btn btn-primary btn-mini' onclick='myfunction'(".$row[0].")>Confrirm</button></td>";
+                  echo "<td><button id='btn-release' class='btn btn-primary btn-mini' onclick = 'release_salary(".$row[0].")'>Release Salary</button></td>";
+                  echo "<td><button id='' class='btn btn-primary btn-mini' onclick = 'confirm_employee(".$row[0].")'>Confrirm</button></td>";
                   echo "</tr>"; 
                 }
 
             }
 
-            function searchEmployee($id) {
+            function searchEmployee($search) {
 
                 $this->openConn();
 
-                $stmt = $this->dbh->prepare("SELECT * FROM employees WHERE id=?");
-                $stmt->bindParam(1,$id);
+                $stmt = $this->dbh->prepare("SELECT * FROM employees WHERE username like '".$search."%'");
                 $stmt->execute();
                 $found=false;
 
                 while($row = $stmt->fetch()){
-                    if(!$found) {
                       echo "<tr id=".$row[0].">";
-                      echo "<td>".$row[0]."</td>";
                       echo "<td>".$row[1]."</td>";
                       echo "<td>".$row[2]."</td>";
                       echo "<td>".$row[3]."</td>";
                       echo "<td>".$row[4]."</td>";
                       echo "<td>".$row[5]."</td>";
+                      echo "<td>".$row[6]."</td>";
+                      echo "<td><button id='btn-release' class='btn btn-primary btn-mini' onclick = 'release_salary(".$row[0].")'>Release Salary</button></td>";
+                      echo "<td><button id='' class='btn btn-primary btn-mini' onclick = 'confirm_employee(".$row[0].")'>Confrirm</button></td>";
                       echo "</tr>"; 
-                       $found=true;
-                         
-                    }else{
-                        echo "Not Found";
-                        
-                    }
-
-                    $this->closeConn();
-
+                      $found=true;
 
                 }
+                if(!$found){
+                    echo "<tr><td colspan='8'>Not found</td></tr>";
+                }
+
+                    $this->closeConn();
             }
 
 
@@ -115,7 +112,7 @@
               
                 $this->openConn();
             
-                $stmt = $this->dbh->prepare("INSERT INTO employees (mode_of_employment, classification_of_employee, fullname, mobile, username,password) VALUES(?, ?, ?, ?, ?, ?)");
+                $stmt = $this->dbh->prepare("INSERT INTO employees (mode_of_employment, classification_of_employee, fullname, mobile, username,password) VALUES (?, ?, ?, ?, ?, ?)");
                 $stmt->bindParam(1, $mode_of_employment);
                 $stmt->bindParam(2, $classification_of_employee);
                 $stmt->bindParam(3, $fullname);  
@@ -126,9 +123,10 @@
                 $id = $this->dbh->lastInsertId();
 
 
-                $stmt2=$this->dbh->prepare("INSERT INTO employee_constraint(employee_id,attendance_id) values(?,?)");
-                $stmt2->bindParam(1, $emp_id[0]);
-                $stmt2->bindParam(2, $id);
+
+                $stmt2=$this->dbh->prepare("INSERT INTO employee_constraint(employee_id) values(?)");
+                //$stmt2->bindParam(1, $emp_id[0]);
+                $stmt2->bindParam(1, $id);
                 $stmt2->execute();
                 
                 $this->closeConn();
@@ -286,32 +284,43 @@
                 $stmt2->execute();
                 $emp_id = $stmt2->fetch();
 
-                /*echo $emp_id;*/
 
-
-                /*$stmt3 = $this->dbh->prepare("SELECT att. id from attendance as att,employee_constraint as ec,employees as emp WHERE att. id = ec. attendance_id AND emp. id = ec. employee_id AND emp. username = ?");
+                $stmt3 = $this->dbh->prepare("SELECT att. id FROM attendance AS att,employees AS emp WHERE att. id=emp. id AND emp. username = ?"/*"SELECT MAX(att. id) as latestAttendedID  FROM attendance AS att,employee_constraint AS ec,employees AS emp WHERE att. id=ec. attendance_id AND emp. username = ?"*/);
                 $stmt3->bindParam(1, $username);
                 $stmt3->execute();
                 $att_id = $stmt3->fetch();
 
-                echo $att_id;*/
-
-                $stmt4 = $this->dbh->prepare("INSERT INTO employee_constraint(employee_id,employment_id) values(?,?)");
-                $stmt4->bindParam(1, $emp_id[0]);
-                $stmt4->bindParam(2,$id);
+                $stmt4 = $this->dbh->prepare("INSERT INTO employee_constraint(attendance_id,employee_id,employment_id) values(?, ?, ?)");
+                $stmt4->bindParam(1,$att_id[0]);
+                $stmt4->bindParam(2,$emp_id[0]);
+                $stmt4->bindParam(3,$id);
+                $stmt4->execute();
 
                 $this->closeConn();
 
             }
 
-            function viewEmploymentHistory($username){
+            function viewEmploymentHistory(){
 
                 $this->openConn();
 
-                $stmt = $this->dbh->prepare("SELECT * from employment_history");
-
+                $stmt = $this->dbh->prepare("SELECT date_of_employment,company_name,company_address,company_phone,company_email,position,salary  FROM employment_history");
+                $stmt->execute();
 
                 $this->closeConn();
+
+                while($row = $stmt->fetch()){
+                    echo "<tr id=".$row[0].">";
+                    echo "<td>".$row[0]."</td>";
+                    echo "<td>".$row[1]."</td>";
+                    echo "<td>".$row[2]."</td>";
+                    echo "<td>".$row[3]."</td>";
+                    echo "<td>".$row[4]."</td>";
+                    echo "<td>".$row[5]."</td>";
+                    echo "<td>".$row[6]."</td>";
+                    echo "</tr>";    
+                }
+                
 
             }
 
@@ -354,7 +363,65 @@
                 }
             }
 
+            function viewPayoutByEmp($username){
+                $this->openConn();
 
+                $stmt = $this->dbh->prepare("SELECT * FROM payout as p,employee_constraint as ec,employees as emp WHERE p. id = ec. payout_id AND emp. id = ec. employee_id AND username = ?");
+                $stmt->bindParam(1,$username);
+                $stmt->execute();
+
+                $this->closeConn();
+                while($row = $stmt->fetch()){
+                    echo "<tr id=".$row[0].">";
+                    echo "<td>".$row[0]."</td>";
+                    echo "<td>".$row[1]."</td>";
+                    echo "<td>".$row[2]."</td>";
+                    echo "<td>".$row[3]."</td>";
+                    echo "<td>".$row[4]."</td>";
+                    echo "</tr>";
+                }
+
+            }
+
+            function releaseSalary($username_to_pay, $salary, $overtime_pay, $date_released, $remarks){
+                $this->openConn();
+
+                $stmt = $this->dbh->prepare("INSERT INTO payout (salary,overtime_pay,date_released,remarks) VALUES (?, ?, ?, ?)");
+                $stmt->bindParam(1,$salary);
+                $stmt->bindParam(2,$overtime_pay);
+                $stmt->bindParam(3,$date_released);
+                $stmt->bindParam(4,$remarks);
+                $stmt->execute();
+                $id = $stmt->lastInsertId();
+
+
+                $stmt2 = $this->dbh->prepare("SELECT employees. id FROM employees WHERE username = ?");
+                $stmt2->bindParam(1, $username_to_pay);
+                $stmt2->execute();
+                $emp_id = $stmt2->fetch();
+
+
+                $stmt3 = $this->dbh->prepare("SELECT att. id FROM attendance AS att,employees AS emp WHERE att. id=emp. id AND emp. username = ?"/*"SELECT MAX(att. id) as latestAttendedID  FROM attendance AS att,employee_constraint AS ec,employees AS emp WHERE att. id=ec. attendance_id AND emp. username = ?"*/);
+                $stmt3->bindParam(1, $username_to_pay);
+                $stmt3->execute();
+                $att_id = $stmt3->fetch();
+
+                $stmt4 = $this->dbh->prepare("SELECT eh. id FROM employment_history AS eh,employees AS emp WHERE eh. id = emp. id AND emp. username = ?");
+                $stmt4->bindParam(1,$username_to_pay);
+                $stmt4->execute();
+                $emp_his = $stmt4->fetch();
+
+                $stmt5 = $this->dbh->prepare("INSERT INTO employee_constraint (attendance_id,employee_id,employment_id,payout_id) VALUES (?, ?, ?, ?)");
+                $stmt5->bindParam(1,$att_id[0]);
+                $stmt5->bindParam(2,$emp_id[0]);
+                $stmt5->bindParam(3,$emp_his[0]);
+                $stmt5->bindParam(4,$id);
+                $stmt5->execute();
+
+                //$stmt4 = $this->dbh->prepare("UPDATE employee_constraint SET payout_id = ? WHERE employee_constraint. id = ");
+
+                $this->closeConn();
+            }
 
 
 

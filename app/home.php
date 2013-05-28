@@ -8,7 +8,7 @@
 	<!--****************************************************LINKs***************************************************-->
 	<link rel="stylesheet" href="css/jquery-ui.css" />
 	<link rel="stylesheet" href="css/index.css" type="text/css"/>
-	<link rel="shortcut icon" href="..app/images/img01.jpg">
+	<link rel="shortcut icon" href="../app/images/img01.jpg">
 	<link rel="stylesheet" href="css/bootstrap.css" />
 
 
@@ -119,8 +119,8 @@
 								<p><label for = 'classification_of_employee'>Classification of Employee:</label><input type= 'text' id='classification_of_employee' name = "classification_of_employee"/></p>
 								<p><label for = 'fullname'>Fullname:</label><input type= 'text' id='fullname' name = "fullname"/></p>
 								<p><label for = 'mobile'>Phone Number:</label><input type= 'text' id='mobile' name = "mobile"/></p>
-								<p><label for = 'username'>Username:</label><input type= 'text' id='username' name = "username"/></p>
-								<p><label for = 'password'>Password:</label><input type= 'password' id='password' name = "password"/></p>
+								<p><label for = 'username'>Username:</label><input type= 'text' id='username' name = "reg_username"/></p>
+								<p><label for = 'password'>Password:</label><input type= 'password' id='password' name = "reg_password"/></p>
 								<input type="hidden" name="id" />
 							</form>
 					</div>

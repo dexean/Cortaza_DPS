@@ -11,7 +11,7 @@ $(function() {
           $("#tbl_tbody_attendance").empty().append(data);
           },
           error: function(data){
-            alert(JSON.stringify(data))
+            alert(JSON.stringify(data));
           }
         });
 
@@ -22,22 +22,31 @@ $(function() {
           $("#profile").append(data);
         },
         error:function(data){
-
         }
+
       });
 
-      /*$.ajax({
+        $.ajax({
+            type: "POST",
+            url: "viewEmpHistory.php",
+            success: function(data) {
+                $("#emp_history").empty().append(data);
+            },
+            error: function(data){
+                alert(JSON.stringify(data));
+            }
+        });
+
+     /* $.ajax({
         type:"POST",
-        url:"viewEmploymentHistory.php",
+        url:"viewEmpHistory.php`",
         succes:function(data){
-          $("#profile").append(data);
+          $("#emp_history").html(data);
         },
         error:function(data){
-
+          
         }
       });*/
-
-
   $('#btn_searchEmp').click(function(){
      $("#searchForm").show();
      $("#search_btn").click(function(){
@@ -107,7 +116,7 @@ $(function() {
                   "close": function(){
                     $(this).dialog("close");
                   }
-                },
+                }
                 
 
               });
@@ -150,7 +159,7 @@ $(function() {
                   "close": function(){
                     $(this).dialog("close");
                   }
-                },
+                }
                 
               });
               $(this).dialog("close");
@@ -158,9 +167,9 @@ $(function() {
              },
             "close":function(){
               $(this).dialog("close");
-            },
+            }
 
-      },
+      }
 
     });
 
@@ -233,7 +242,7 @@ $(function() {
                       url: "addEmploymentHistory.php",
                       data: empHistoryObj,
                       success: function(data){
-                        alert(JSON.stringify(data));
+                        //alert(JSON.stringify(data));
                         $(this).dialog("close");
                         },
 
@@ -247,7 +256,7 @@ $(function() {
                   "close": function(){
                     $(this).dialog("close");
                   }
-                },
+                }
                 
 
               });
@@ -258,13 +267,31 @@ $(function() {
 
             "close":function(){
               $(this).dialog("close");
-            },
+            }
 
-        },
+        }
 
       });
 
   });
+
+   $('#btn_payout').click(function (){
+      var config = confirm('do you really wanted to look at ur releases???');
+      if(config){
+          $.ajax({
+              type: "POST",
+              url: "viewPayoutByEmployee.php",
+              success: function(data) {
+                  $("#payout").empty().append(data);
+              },
+              error: function(data){
+                  alert(JSON.stringify(data));
+              }
+          });
+      }else{
+          alert("error detected");
+      }
+   });
 
 
 });

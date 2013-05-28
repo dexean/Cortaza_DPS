@@ -31,3 +31,24 @@
 	alert('ACCOUNTANT ONLY!!!!!!!!!!!');
 
 });*/
+$(function() {
+
+    
+
+});
+
+function release_salary(id){
+  var obj={'id':id};
+  alert('Not yet done');
+
+}
+function confirm_employee(id){
+  var confirm_data={'id':id};
+  alert('Next function is to confirm');
+  //var config = prompt('Who is that damn thing??');
+
+
+  /*if(){
+
+  }*/
+}

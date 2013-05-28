@@ -18,14 +18,13 @@ if (!isset($_SESSION['username'])){
 	<link rel="stylesheet" href="css/index.css" type="text/css"/>
 	<link rel="shortcut icon" href="../app/images/img01.jpg">
 	<link rel="stylesheet" href="./css/accountant.css" type="text/css"/>
-	<link rel="stylesheet" href="css/bootstrap.css" type="text/css"/>
+	<link rel="stylesheet" href="./css/bootstrap.css" type="text/css"/>
 
 
 
-	<!--***************S******C*******R*******I*******P******T*******S**********-->
+	<!--***************S******C*******R*******I*******P******T*******S************************-->
 	<script src="js/jquery-1.8.2.min.js"></script>
 	<script src = "js/jquery-ui-1.9.0.custom.min.js"></script>
-	<!--<script src="../js/functions.js"></script>-->
 	<script src="js/jquery-ui.js"></script>
 	<script src="js/accountant.js"></script>
 	<script src="js/tables_from_accountant.js"></script>
@@ -109,11 +108,10 @@ if (!isset($_SESSION['username'])){
 					</div>
 							<div id="table_to_append">
 								    <form class="form-search">
-									    <input type="text" class="input-medium search-query">
-									    <button type="submit" class="btn btn-primary btn-mini">Search</button>
+									    <input type="text" class="input-medium search-query" id="search" name="search" placeholder="search via username">
 								    </form>
 								<div  class="employee" id="employee_tbl">
-									<table class="table table-hover" id="employee" border="3">
+									<table class="table table-hover table-bordered" id="" border="3">
 										<thead>
 											<tr>
 												<th>Mode of Employment</th>
@@ -129,7 +127,7 @@ if (!isset($_SESSION['username'])){
 									</table>
 								</div>
 								<div class="payout_history" id="tabContent">
-										<table class="table table-hover" id="payout_history" border="3">
+										<table class="table table-hover table-bordered" id="payout_history" border="3">
 											<thead>
 												<tr>
 													<th>Employee Id</th>
@@ -143,7 +141,7 @@ if (!isset($_SESSION['username'])){
 										</table>
 								</div>
 								<div class="overtime_pays" id="tabContent">
-										<table class="table table-hover" id="overtime_pays" border="3">
+										<table class="table table-hover table-bordered" id="overtime_pays" border="3">
 												<thead>
 												<tr>
 													<th>Employee Name</th>
@@ -156,7 +154,7 @@ if (!isset($_SESSION['username'])){
 										</table>
 								</div>
 								<div class="attendance" id="tabContent">
-										<table class="table table-hover" id="attendance" border="3">
+										<table class="table table-hover table-bordered" id="attendance" border="3">
 											<thead>
 												<tr>
 													<th>Employee Id</th>
@@ -171,7 +169,7 @@ if (!isset($_SESSION['username'])){
 										</table>
 								</div>
 								<div class="insurances" id="tabContent">
-										<table class="table table-hover" id="insurances" border="3">
+										<table class="table table-hover table-bordered" id="insurances" border="3">
 												<thead>
 												<tr>
 													<th>Employee Id</th>
@@ -186,9 +184,15 @@ if (!isset($_SESSION['username'])){
 								</div>
 						</div>
 
-			
+					<div id="Forms">
+						<form id="release_salary" action="accountant.php" method="POST">
+							<p><label for='salary'></label><input type='money' name='' placeholder=''/></p>
+							<p><label for='overtime_pay'></label><input type='money' name='' placeholder=''/></p>
+							<p><label for='date_released'></label><input type='date' name='' placeholder='date'/></p>
+							<p><label for='remarks'></label><input type='text' name='' placeholder=''/></p>
+						</form>
+					</div>
 			</div> 
-
 		</div>
 
 		
