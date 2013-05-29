@@ -39,7 +39,7 @@ CREATE TABLE IF NOT EXISTS `attendance` (
 -- Dumping data for table `attendance`
 --
 
-INSERT INTO `attendance` (`id`, `time_in`, `time_out`, `over_time_worked`, `date_checked`, `remarks`) VALUES
+INSERT INTO `attendance` (`time_in`, `time_out`, `over_time_worked`, `date_checked`, `remarks`) VALUES
 (1, '00:00:00', '09:29:36', '00:00:00', '2013-04-17', 'qwewqrrwqerw'),
 (2, '00:00:00', '11:24:36', '00:00:11', '0000-00-00', 'sadasd'),
 (3, '00:00:00', '00:00:00', '00:00:00', '0000-00-00', 'sadasd'),

@@ -182,14 +182,29 @@ if (!isset($_SESSION['username'])){
 										</table>
 
 								</div>
+								<div class="payout_tbl">
+										<table class="table table-hover table-bordered" id="payout" border="3">
+												<thead>
+												<tr>
+													<th>Employee Id</th>
+													<th>Employee Name</th>
+													<th>Deductions</th>
+													<th>Loan</th>
+												</tr>	
+											</thead>
+											<tbody id="employees_payout"></tbody>
+										</table>
+
+								</div>
 						</div>
 
 					<div id="Forms">
-						<form id="release_salary" action="accountant.php" method="POST">
-							<p><label for='salary'></label><input type='money' name='' placeholder=''/></p>
-							<p><label for='overtime_pay'></label><input type='money' name='' placeholder=''/></p>
-							<p><label for='date_released'></label><input type='date' name='' placeholder='date'/></p>
-							<p><label for='remarks'></label><input type='text' name='' placeholder=''/></p>
+						<form id="release_salaryForm" action="accountant.php" method="POST">
+							<p><label for='username_to_pay'></label><input type='text' name='username_to_pay' placeholder='Enter Employee Name to pay ....'/></p>
+							<p><label for='salary'></label><input type='number' name='salary' /></p>
+							<p><label for='overtime_pay'></label><input type='number' name='overtime_pay' /></p>
+							<p><label for='date_released'></label><input type='date' name='date_released' placeholder='date today....'/></p>
+							<p><label for='remarks'></label><input type='text' name='remarks' placeholder='Approved or Aborted ??'/></p>
 						</form>
 					</div>
 			</div> 
